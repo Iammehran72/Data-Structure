@@ -46,19 +46,19 @@ int main()
 	
 	cout<<endl;
 	
-	struct node* prev, *current, *next;
+	struct node* prevnode, *currentnode, *nextnode;
 	
 	prev=NULL;
-	current=next=head;
-	while(next!=NULL)
+	currentnode=nextnode=head;
+	while(nextnode!=NULL)
 	{
-		next=current->next;
-		current->next=prev;
-		prev=current;
-		current=next;
+		nextnode=currentnode->next;
+		currentnode->next=prevnode;
+		prevnode=currentnode;
+		currentnode=nextnode;
 		
 	}
-	head=prev;
+	head=prevnode;
 		cout<<endl;
 	cout<<"Reversed Linked List = ";
 	traverse=head;
